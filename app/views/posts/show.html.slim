@@ -12,3 +12,14 @@ h2 いいねしたユーザー
 - @favorite_users.each do |f_user|
   = link_to f_user.email, user_path(f_user.id)
   hr
+hr color="000"
+h2 コメント
+- if user_signed_in?
+  = form_for [@post, @comment], method: :post do |f|
+    = f.text_field :content
+    = f.submit
+h2 コメント一覧
+- if user_signed_in?
+  - @comments.each do |comment|
+    = comment.content
+    hr

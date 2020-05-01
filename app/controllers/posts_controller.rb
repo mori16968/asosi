@@ -12,6 +12,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @favorite_users = @post.favorite_users
+    @comment = current_user.comments.build
+    @comments = @post.comments
   end
 
   def create
