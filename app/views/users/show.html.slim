@@ -1,7 +1,12 @@
 h1 ユーザーのページ
 p  = @user.email
-hr
+hr color="000"
 h2 全投稿
 - @posts.each do |post|
   = link_to post.body, post_path(post.id)
+  hr
+hr color="000"
+h2 いいねした投稿
+- @favorite_posts.each do |f_post|
+  = link_to f_post.body, post_path(f_post.id)
   hr
