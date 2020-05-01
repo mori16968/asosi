@@ -1,0 +1,5 @@
+h1 新規投稿
+p  = form_for @post do |f|
+   = f.label :body, "投稿"
+   = f.text_field :body
+   = f.submit
