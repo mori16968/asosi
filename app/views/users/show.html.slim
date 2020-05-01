@@ -1,2 +1,7 @@
 h1 ユーザーのページ
 p  = @user.email
+hr
+h2 全投稿
+- @posts.each do |post|
+  = link_to post.body, post_path(post.id)
+  hr
